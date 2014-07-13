@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>报名查询</title>
+</head>
+<body>
+    <h1>报名查询</h1>
+    <form action="/lookup_result/" method="post">
+        {%csrf_token%}
+        <p>学号: <input type="text" name="student_id"></p>
+        <input type="submit" value="Submit">
+    </form>
+    <p>已报名活动</p>
+    <ul>
+        {% for result in results %}
+        <li>{{result.name}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% load mark_event%}
+<html>
+<head><title>活动列表</title></head>
+<body>
+	{%for event in events%}
+	<p>活动名称：{{event.name}}</p>
+	<p>活动描述：{{event.discription}}</p>
+	<p>活动日期：{{event.datetime_set.all}}</p>
+	<a href="/sign_info/{% show_event_name event.name%}">立即报名</a>
+	{%endfor%}
+</body>
+</html>
